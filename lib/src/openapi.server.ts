@@ -76,7 +76,7 @@ export class OpenAPIServer {
       const route = controller[member];
       const routeProperties = Reflect.getOwnMetadata(member, prototype);
       if (route && routeProperties) {
-        const { routeMiddleware, httpVerb: httpmethods, path, routeWrapper } = routeProperties;
+        const { routeMiddleware, httpmethods, path, routeWrapper } = routeProperties;
         let callBack = (req: Request, res: Response, next: NextFunction) => {
           return controller[member](req, res, next);
         };
